@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Muhammad Ramdan Arrosyid - AI Video Creator, Video QA, AI and IoT Portfolio">
+    <title>Muhammad Ramdan Arrosyid | Portfolio</title>
+
+    <style>
+        :root {
+            --bg: #0b1120;
+            --card: #121c30;
+            --text: #f1f5f9;
+            --muted: #a0aec0;
+            --accent: #67e8d5;
+            --blue: #8ab4ff;
+            --border: #26354d;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        a:hover {
+            opacity: 0.8;
+        }
+
+        .container {
+            width: min(1100px, 90%);
+            margin: auto;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(11, 17, 32, 0.95);
+            border-bottom: 1px solid var(--border);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 0;
+            gap: 20px;
+        }
+
+        .logo {
+            font-weight: bold;
+            color: var(--accent);
+            font-size: 18px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 22px;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .hero {
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            padding: 80px 0;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .eyebrow {
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        h1 {
+            font-size: clamp(38px, 7vw, 72px);
+            line-height: 1.15;
+            margin: 20px 0;
+        }
+
+        h1 span {
+            color: var(--accent);
+        }
+
+        .hero-description {
+            max-width: 700px;
+            color: var(--muted);
+            font-size: 18px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 12px 22px;
+            border-radius: 8px;
+            font-weight: bold;
+            border: 1px solid var(--border);
+        }
+
+        .button-primary {
+            background: var(--accent);
+            color: #071b19;
+            border-color: var(--accent);
+        }
+
+        .button-secondary {
+            color: var(--text);
+        }
+
+        section {
+            padding: 75px 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .section-title {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .section-description {
+            color: var(--muted);
+            margin-bottom: 30px;
+            max-width: 700px;
+        }
+
+        .about-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 15px;
+            padding: 30px;
+        }
+
+        .about-card p {
+            color: var(--muted);
+            margin-bottom: 15px;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .project-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 15px;
+            padding: 25px;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+        }
+
+        .project-category {
+            color: var(--accent);
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+
+        .project-card h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        .project-card p {
+            color: var(--muted);
+            font-size: 15px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 20px;
+        }
+
+        .tag {
+            background: #1b2b43;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 5px 12px;
+            font-size: 12px;
+            color: var(--blue);
+        }
+
+        .workflow {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .workflow-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            padding: 20px;
+            border-radius: 12px;
+        }
+
+        .workflow-card h3 {
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+
+        .workflow-card p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .skill {
+            padding: 12px 18px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+        }
+
+        .contact-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            padding: 30px;
+            border-radius: 15px;
+        }
+
+        .contact-card p {
+            color: var(--muted);
+            margin: 10px 0;
+        }
+
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 25px 0;
+            text-align: center;
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        @media (max-width: 750px) {
+            nav {
+                flex-direction: column;
+            }
+
+            .nav-links {
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .hero {
+                min-height: auto;
+                padding: 80px 0;
+            }
+
+            .project-grid,
+            .workflow {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 27px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="container">
+        <nav>
+            <a href="#home" class="logo">MR ARROSYID</a>
+
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#workflow">Workflow</a>
+                <a href="#skills">Skills</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<main>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+
+                <div class="eyebrow">
+                    AI Video Creator | Video QA | AI & IoT
+                </div>
+
+                <h1>
+                    Muhammad Ramdan<br>
+                    <span>Arrosyid</span>
+                </h1>
+
+                <p class="hero-description">
+                    Electrical Engineering Education undergraduate passionate
+                    about AI-generated video, creative technology, and
+                    quality-focused content production.
+                    I develop video concepts, design characters,
+                    create scripts using AI, and generate videos while
+                    paying attention to visual consistency and accuracy.
+                </p>
+
+                <div class="buttons">
+                    <a href="#projects" class="button button-primary">
+                        Explore Projects
+                    </a>
+
+                    <a href="#contact" class="button button-secondary">
+                        Contact Me
+                    </a>
+                </div>
+
+                <div class="tags">
+                    <span class="tag">AI Video Creation</span>
+                    <span class="tag">Video Quality Review</span>
+                    <span class="tag">Gemini</span>
+                    <span class="tag">IoT</span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+        <div class="container">
+
+            <h2 class="section-title">About Me</h2>
+
+            <p class="section-description">
+                Creative technology enthusiast with experience
+                in AI video generation and technical projects.
+            </p>
+
+            <div class="about-card">
+
+                <p>
+                    My name is Muhammad Ramdan Arrosyid.
+                    I am currently pursuing a Bachelor's degree
+                    in Electrical Engineering Education.
+                </p>
+
+                <p>
+                    My interests include Artificial Intelligence,
+                    Internet of Things, and AI-generated video content.
+                    I use AI tools to develop scripts, design characters,
+                    create product concepts, build scenes, and generate videos.
+                </p>
+
+                <p>
+                    Through my creative workflow, I pay attention to
+                    visual consistency, character appearance,
+                    product accuracy, and whether the generated video
+                    follows the original concept.
+                </p>
+
+                <p>
+                    I am interested in opportunities involving
+                    Video QA, AI content creation, and technology projects.
+                </p>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+        <div class="container">
+
+            <h2 class="section-title">My Projects</h2>
+
+            <p class="section-description">
+                Selected project areas involving AI video generation,
+                content review, and engineering technology.
+            </p>
+
+            <div class="project-grid">
+
+                <article class="project-card">
+
+                    <div class="project-category">
+                        AI Video Generation
+                    </div>
+
+                    <h3>AI Character & Scene Creation</h3>
+
+                    <p>
+                        Develop character references before generating
+                        scenes to help maintain visual consistency.
+                        Create product-focused and scene-based videos
+                        using AI generation workflows.
+                    </p>
+
+                    <div class="tags">
+                        <span class="tag">Gemini</span>
+                        <span class="tag">Character Design</span>
+                        <span class="tag">AI Video</span>
+                    </div>
+
+                </article>
+
+                <article class="project-card">
+
+                    <div class="project-category">
+                        Video QA
+                    </div>
+
+                    <h3>AI Video Quality Review</h3>
+
+                    <p>
+                        Review generated videos against their intended
+                        concepts and requirements. Check product details,
+                        captions, visual consistency, and potential
+                        AI-generated artifacts.
+                    </p>
+
+                    <div class="tags">
+                        <span class="tag">Visual Review</span>
+                        <span class="tag">Accuracy</span>
+                        <span class="tag">Quality Control</span>
+                    </div>
+
+                </article>
+
+                <article class="project-card">
+
+                    <div class="project-category">
+                        AI Scriptwriting
+                    </div>
+
+                    <h3>AI-Assisted Script Development</h3>
+
+                    <p>
+                        Use AI to brainstorm concepts, develop scripts,
+                        structure scenes, and prepare content before
+                        the video generation process.
+                    </p>
+
+                    <div class="tags">
+                        <span class="tag">AI Writing</span>
+                        <span class="tag">Story Development</span>
+                        <span class="tag">Content Creation</span>
+                    </div>
+
+                </article>
+
+                <article class="project-card">
+
+                    <div class="project-category">
+                        Engineering & IoT
+                    </div>
+
+                    <h3>AI and IoT Projects</h3>
+
+                    <p>
+                        Explore sensor-based prototypes and embedded
+                        systems. Apply troubleshooting, testing,
+                        documentation, and iterative improvement
+                        to engineering projects.
+                    </p>
+
+                    <div class="tags">
+                        <span class="tag">ESP32</span>
+                        <span class="tag">Sensors</span>
+                        <span class="tag">IoT</span>
+                    </div>
+
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- WORKFLOW -->
+    <section id="workflow">
+        <div class="container">
+
+            <h2 class="section-title">My AI Video Workflow</h2>
+
+            <p class="section-description">
+                A structured process from concept development
+                to final quality review.
+            </p>
+
+            <div class="workflow">
+
+                <div class="workflow-card">
+                    <h3>01. Concept</h3>
+                    <p>
+                        Understand the video objective,
+                        intended message, and requirements.
+                    </p>
+                </div>
+
+                <div class="workflow-card">
+                    <h3>02. Design</h3>
+                    <p>
+                        Create character references and define
+                        the product, environment, and scenes.
+                    </p>
+                </div>
+
+                <div class="workflow-card">
+                    <h3>03. Generate</h3>
+                    <p>
+                        Develop scripts and generate videos
+                        using AI tools and prompt iteration.
+                    </p>
+                </div>
+
+                <div class="workflow-card">
+                    <h3>04. Review</h3>
+                    <p>
+                        Check visual consistency, text accuracy,
+                        generated artifacts, and concept alignment.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+        <div class="container">
+
+            <h2 class="section-title">Skills & Tools</h2>
+
+            <p class="section-description">
+                Creative, technical, and quality-focused capabilities.
+            </p>
+
+            <div class="skills">
+
+                <span class="skill">Gemini</span>
+                <span class="skill">AI Video Generation</span>
+                <span class="skill">AI Scriptwriting</span>
+                <span class="skill">Character Design</span>
+                <span class="skill">Scene Development</span>
+                <span class="skill">Prompt Engineering</span>
+                <span class="skill">Visual Consistency Review</span>
+                <span class="skill">Video QA Fundamentals</span>
+                <span class="skill">IoT</span>
+                <span class="skill">ESP32</span>
+                <span class="skill">Sensor Integration</span>
+                <span class="skill">Technical Troubleshooting</span>
+
+            </div>
+
+            <div style="margin-top:25px;color:#a0aec0">
+                <p>
+                    Education: Bachelor's Degree in Electrical
+                    Engineering Education — Currently pursuing.
+                </p>
+
+                <p>
+                    Languages: Indonesian (Native),
+                    English (Able to communicate in English).
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+        <div class="container">
+
+            <h2 class="section-title">Let's Connect</h2>
+
+            <p class="section-description">
+                Open to opportunities in AI video creation,
+                Video QA, and technology projects.
+            </p>
+
+            <div class="contact-card">
+
+                <h3>Muhammad Ramdan Arrosyid</h3>
+
+                <p>
+                    Email:
+                    <a href="mailto:rosyidramdan9@gmail.com">
+                        rosyidramdan9@gmail.com
+                    </a>
+                </p>
+
+                <p>
+                    Phone:
+                    <a href="tel:+62831244874879">
+                        +62 831-2448-4879
+                    </a>
+                </p>
+
+                <div class="buttons">
+
+                    <a class="button button-primary"
+                       href="mailto:rosyidramdan9@gmail.com">
+                        Send Email
+                    </a>
+
+                    <a class="button button-secondary"
+                       href="https://github.com"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        GitHub
+                    </a>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <div class="container">
+        © 2026 Muhammad Ramdan Arrosyid |
+        AI Video Creator & Technology Portfolio
+    </div>
+</footer>
+
+</body>
+</html>
